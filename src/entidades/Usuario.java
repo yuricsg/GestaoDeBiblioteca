@@ -36,24 +36,22 @@ public class Usuario {
         return livrosEmprestados;
     }
 
-    public void emprestarLivro(Livro livro, LocalDate dataDevolucao){
-        if(livro.isDisponivel()){
+    public void emprestarLivro(Livro livro, LocalDate dataDevolucao) {
+        if (livro.isDisponivel()) {
             livrosEmprestados.put(livro, dataDevolucao);
             livro.setDisponivel(false);
-        }else{
+        } else {
             System.out.println("O livro não está disponível.");
         }
-
-    public void devolverLivro(Livro livro){
-            if(livrosEmprestados.containsKey(livro)){
-                livrosEmprestados.remove(livro);
-                livro.setDisponivel(true);
-            }else{
-                System.out.println("O livro não foi emprestado pelo usuário");
-            }
-        }
-
     }
 
-
+    public void devolverLivro(Livro livro) {
+        if (livrosEmprestados.containsKey(livro)) {
+            livrosEmprestados.remove(livro);
+            livro.setDisponivel(true);
+        } else {
+            System.out.println("O livro não foi emprestado pelo usuário.");
+        }
+    }
 }
+
