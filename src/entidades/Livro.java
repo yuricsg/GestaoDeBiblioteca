@@ -13,7 +13,7 @@ public class Livro {
     private Genero genero;
     private boolean disponivel;
 
-    public Livro(String codigo, String titulo, Autor autor, LocalDate dataPublicacao, Genero genero, boolean disponivel) {
+    public Livro(String codigo, String titulo, Autor autor, LocalDate dataPublicacao, Genero genero) {
         this.codigo = codigo;
         this.titulo = titulo;
         this.autor = autor;
